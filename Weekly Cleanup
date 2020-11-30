@@ -1,0 +1,10 @@
+REM Taskscheduler runs this weekly
+TITLE Backup Folder Organizer
+:main
+rmdir /s /q M:\BackUps\Backups
+mkdir M:\BackUps\Backups
+cd M:\BackUps\Backups
+mkdir %date%
+cls
+echo Copying.... (this may take a few minutes)
+xcopy /y /q "M:\Hoomanity Modded v1.4" "M:\BackUps\Backups\%date%" /e
