@@ -1,0 +1,12 @@
+REM I use taskscheduler to run this everyday
+echo Backing up Hoomanity Server in it's current state... (this may take a couple minutes)
+cd M:\BackUps\Backups
+IF EXIST "M:\BackUps\Backups\%date%" (
+rmdir /q /s "M:\BackUps\Backups\%date%"
+cls
+xcopy /y /i "M:\Hoomanity Modded v1.4" "M:\BackUps\Backups\%date%" /e
+) ELSE (
+cls
+xcopy /y /i "M:\Hoomanity Modded v1.4" "M:\BackUps\Backups\%date%" /e
+)
+cls
